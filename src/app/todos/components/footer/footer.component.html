@@ -1,0 +1,30 @@
+<footer class="footer" [ngClass]="{ hidden: !displayFooterSig() }">
+  <span class="todo-count">{{ activeCountSig() }}</span>
+  <span class="todos-left">{{ itemsLeftTextSig() }}</span>
+  <ul class="filters">
+    <li>
+      <a
+        href="/"
+        [ngClass]="{ selected: filterSig() === filterEnum.All }"
+        (click)="changeFilter($event, filterEnum.All)"
+        >All</a
+      >
+    </li>
+    <li>
+      <a
+        href="/"
+        [ngClass]="{ selected: filterSig() === filterEnum.Active }"
+        (click)="changeFilter($event, filterEnum.Active)"
+        >Active</a
+      >
+    </li>
+    <li>
+      <a
+        href="/"
+        [ngClass]="{ selected: filterSig() === filterEnum.Completed }"
+        (click)="changeFilter($event, filterEnum.Completed)"
+        >Completed</a
+      >
+    </li>
+  </ul>
+</footer>
