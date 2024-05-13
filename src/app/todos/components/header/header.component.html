@@ -4,7 +4,7 @@
     class="new-todo"
     placeholder="What needs to be done?"
     autofocus
-    [value]="text"
+    [value]="text()"
     (keyup)="changeText($event)"
     (keyup.enter)="addTodo()"
   />

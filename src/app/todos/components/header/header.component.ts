@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { TodosService } from '../../services/todos.service';
 
 @Component({
@@ -10,19 +10,26 @@ import { TodosService } from '../../services/todos.service';
 })
 export class HeaderComponent {
   todosService = inject(TodosService);
-  text: string = '';
+  text = signal('');
+
+  constructor() {
+    effect(() => {
+      // Executed every time the text signal value changes
+      console.log(`HeaderComponent effect: ${this.text()}`);
+    });
+  }
 
   changeText(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.text = target.value;
+    this.text.set(target.value);
   }
 
   addTodo(): void {
-    if (this.text.trim().length === 0) {
+    if (this.text().trim().length === 0) {
       return;
     }
 
-    this.todosService.addTodo(this.text);
-    this.text = '';
+    this.todosService.addTodo(this.text());
+    this.text.set('');
   }
 }

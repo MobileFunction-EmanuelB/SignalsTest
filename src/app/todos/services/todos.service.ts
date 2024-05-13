@@ -1,6 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { ITodo } from '../types/todo.interface';
 import { TodosFilter } from '../types/filter.enum';
+import { SignalsExample } from '../../signals.example';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,12 @@ import { TodosFilter } from '../types/filter.enum';
 export class TodosService {
   todosSig = signal<ITodo[]>([]);
   todosFilterSig = signal(TodosFilter.All);
+
+  signalsExample = inject(SignalsExample);
+
+  constructor() {
+    this.signalsExample.printSignals();
+  }
 
   addTodo(text: string): void {
     // New todo
