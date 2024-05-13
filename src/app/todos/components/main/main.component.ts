@@ -33,7 +33,23 @@ export class MainComponent {
     });
   });
 
+  isAllTodosSelected = computed(() => {
+    if (this.todosService.todosSig().length === 0) {
+      return false;
+    }
+    return this.todosService.todosSig().every((todo) => todo.isCompleted);
+  });
+
+  noTodosClass = computed(() => {
+    return this.todosService.todosSig().length === 0;
+  });
+
   setEditingId(id: string | null): void {
     this.editingId = id;
+  }
+
+  toggleAllTodos(event: Event): void {
+    const areAllTodosCompleted = this.isAllTodosSelected();
+    this.todosService.toggleAll(areAllTodosCompleted);
   }
 }

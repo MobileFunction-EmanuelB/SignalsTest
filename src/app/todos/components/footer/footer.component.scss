@@ -1,3 +1,30 @@
 .hidden {
   display: none;
 }
+
+.filters {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.filters li {
+  margin: 0 5px;
+}
+
+.filters li a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+.filters li a.selected {
+  color: goldenrod;
+  text-decoration: underline;
+}
+
+.todo-count-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  color: darkcyan;
+}

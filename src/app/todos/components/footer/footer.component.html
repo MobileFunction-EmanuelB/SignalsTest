@@ -1,6 +1,9 @@
 <footer class="footer" [ngClass]="{ hidden: !displayFooterSig() }">
-  <span class="todo-count">{{ activeCountSig() }}</span>
-  <span class="todos-left">{{ itemsLeftTextSig() }}</span>
+  <hr />
+  <div class="todo-count-wrapper">
+    <span class="todo-count">{{ activeCountSig() }}</span>
+    <span class="todos-left">{{ itemsLeftTextSig() }}</span>
+  </div>
   <ul class="filters">
     <li>
       <a

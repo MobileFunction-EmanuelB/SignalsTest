@@ -1,0 +1,20 @@
+.todoapp {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f0f0f0;
+  overflow: auto;
+}
+
+.inner-wrapper {
+  margin: 30px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 15px;
+  min-width: 30%;
+}

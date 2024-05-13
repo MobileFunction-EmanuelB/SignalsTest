@@ -1,3 +1,43 @@
+.view {
+  display: flex;
+  align-items: center;
+}
+
+li .view label {
+  font-size: 1.2em;
+  color: blue;
+  flex-grow: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 li.editing .view label {
   display: none;
+}
+
+li.completed .view label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.hidden {
+  display: none;
+}
+
+button.destroy {
+  background-color: transparent;
+  border: none;
+  color: #cc9a9a;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+button.destroy:hover {
+  color: red;
+}
+
+.edit {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
